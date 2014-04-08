@@ -4,15 +4,46 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <title>Spoon-Knife</title>
+  
+  	<script src="js/jquery-1.11.0.min.js"></script>
+  	<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.4.min.css" />
+	<script src="js/jquery-ui-1.10.4.min.js"></script>	
+	
   <LINK href="styles.css" rel="stylesheet" type="text/css">
+  
+  <script>
+  $(function() {  	
+
+	$( "#flipoffButton" ).button({ disabled: true });
+    $( "#flipoffButton" ).click(function( event ) {
+    	$("img").attr("src", "img/middle_finger.jpg");
+    	$( "#flipoffButton" ).button("disable");
+    	$( "#normalButton" ).button("enable");
+        return false;
+        
+    });
+    
+    $( "#normalButton" ).button();
+    $( "#normalButton" ).click(function( event ) {  
+    	$("img").attr("src", "img/kitten.jpg");
+    	$( "#normalButton" ).button("disable");
+    	$( "#flipoffButton" ).button("enable");
+        return false;
+    });
+  });
+  </script>
 </head>
 
 <body>
 
-<img src="img/middle_finger.jpg" id="octocat" alt="" />
+<img src="img/middle_finger.jpg" id="image" alt="" />
+<br />
+<button id="flipoffButton">Flipoff Page</button>
+<button id="normalButton">Normal Page</button>
+
 
 <!-- Feel free to change this text here -->
-<p>
+<p id="textParagraph">
   Fok you! Haha!
 </p>
 
